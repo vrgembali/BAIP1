@@ -1,0 +1,21 @@
+apiVersion: asset.sap/v1
+kind: Asset
+type: mcp-server
+
+metadata:
+  name: sap-sf-performanceandgoalspmgm-mcp-server
+  description: Exposes SAP SuccessFactors Performance and Goal Management (PMGM) operations as MCP tools, enabling the agent to read and write quarterly goals for sales representatives.
+  version: "1.0.0"
+  translation: mcp-translation/translation.json
+  apiSpec: mcp-translation/api-spec.edmx
+
+requires:
+  - name: PerformanceandGoalsPMGM
+    kind: api
+    ordId: sap.sf:apiResource:PerformanceandGoalsPMGM:v1
+
+provides:
+  apis:
+    - name: sap-sf-performanceandgoalspmgm-mcp-server
+      kind: mcp-server
+      ordId: customer.build:apiResource:sales-goal-setting-agent-8b2a7.sap-sf-performanceandgoalspmgm-mcp-server:v1

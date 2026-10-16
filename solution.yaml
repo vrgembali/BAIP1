@@ -1,0 +1,12 @@
+apiVersion: solution.sap/v1
+kind: Solution
+
+metadata:
+  name: sales-goal-setting-agent-8b2a7
+  version: "1.0.0"
+  description: AI agent that guides sales representatives through quarterly development objective creation using SAP Sales Cloud territory data and SAP SuccessFactors Goal Management.
+
+assets:
+  - ref: ./assets/sales-goal-setting-agent/asset.yaml
+  - ref: ./assets/sap-sf-performanceandgoalspmgm-mcp-server/asset.yaml
+  - ref: ./assets/sap-sf-ecemployeeprofile-mcp-server/asset.yaml

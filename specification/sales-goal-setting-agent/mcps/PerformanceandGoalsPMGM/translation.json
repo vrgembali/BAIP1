@@ -1,0 +1,5090 @@
+{
+  "mcpTranslationVersion": "0.6",
+  "target": {
+    "ordId": "sap.sf:apiResource:PerformanceandGoalsPMGM:v1",
+    "type": "edmx"
+  },
+  "serverInfo": {
+    "name": "sap.mcp/sfodata",
+    "title": "sfodata",
+    "version": "1.0.0",
+    "description": "MCP server for the sfodata service."
+  },
+  "tools": [
+    {
+      "name": "get_metadata_sfodata",
+      "title": "get_metadata_sfodata",
+      "description": "Get metadata of the OData service with optional filtering to reduce token consumption.\nReturns the metadata in XML format, which can be used to discover available entities and their properties.\nCall this endpoint every time before you call other tools to ensure understanding of the schema.\nBased on the metadata, you can dynamically create an OData request.\n\nUse filtering parameters to get specific metadata sections. Without parameters, this tool returns the complete XML metadata (which might be huge).\nOnly use the specified enum values for the filtering parameters.\n",
+      "odataType": {
+        "metadataRequest": {},
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "batch_for_sfodata",
+      "title": "batch_for_sfodata",
+      "description": "Execute multiple OData operations in a single batch request using the $batch endpoint. This allows you to combine multiple tool calls into one HTTP request, improving efficiency when performing multiple operations.",
+      "odataType": {
+        "batchRequest": {},
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "list_goalplantemplate_for_sfodata",
+      "title": "list_GoalPlanTemplate_for_sfodata",
+      "description": "Retrieve a list of entities from the GoalPlanTemplate collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "GoalPlanTemplate",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "inlinecount"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "create_goalplantemplate_for_sfodata",
+      "title": "create_GoalPlanTemplate_for_sfodata",
+      "description": "Create a new instance of the GoalPlanTemplate EntitySet in the sfodata service. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "GoalPlanTemplate",
+          "crudOperation": "create",
+          "parameters": [
+            {
+              "name": "defaultTemplate",
+              "newParameterName": "defaulttemplate"
+            },
+            {
+              "name": "description",
+              "newParameterName": "description"
+            },
+            {
+              "name": "displayOrder",
+              "newParameterName": "displayorder"
+            },
+            {
+              "name": "dueDate",
+              "newParameterName": "duedate"
+            },
+            {
+              "name": "id",
+              "newParameterName": "id"
+            },
+            {
+              "name": "mobileFields",
+              "newParameterName": "mobilefields"
+            },
+            {
+              "name": "name",
+              "newParameterName": "name"
+            },
+            {
+              "name": "parentPlanId",
+              "newParameterName": "parentplanid"
+            },
+            {
+              "name": "startDate",
+              "newParameterName": "startdate"
+            },
+            {
+              "name": "useTextForPrivacy",
+              "newParameterName": "usetextforprivacy"
+            },
+            {
+              "name": "enums",
+              "newParameterName": "enums"
+            },
+            {
+              "name": "goalWeights",
+              "newParameterName": "goalweights"
+            },
+            {
+              "name": "goals",
+              "newParameterName": "goals"
+            },
+            {
+              "name": "planStates",
+              "newParameterName": "planstates"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "location"
+          },
+          {
+            "name": "content-id"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "update_goalplantemplate_for_sfodata",
+      "title": "update_GoalPlanTemplate_for_sfodata",
+      "description": "Update an entity in GoalPlanTemplate EntitySet in the sfodata service. Provide the key properties to identify the entity and the properties to update in the request body. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "GoalPlanTemplate",
+          "crudOperation": "update",
+          "parameters": [
+            {
+              "name": "id",
+              "newParameterName": "id"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "delete_goalplantemplate_for_sfodata",
+      "title": "delete_GoalPlanTemplate_for_sfodata",
+      "description": "Delete an entity from GoalPlanTemplate EntitySet in the sfodata service.",
+      "odataType": {
+        "entitySet": {
+          "name": "GoalPlanTemplate",
+          "crudOperation": "delete",
+          "parameters": [
+            {
+              "name": "id",
+              "newParameterName": "id"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "get_goalplantemplate_for_sfodata",
+      "title": "get_GoalPlanTemplate_for_sfodata",
+      "description": "Retrieve a single entity by its key from the GoalPlanTemplate collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "GoalPlanTemplate",
+          "crudOperation": "readByKey",
+          "parameters": [
+            {
+              "name": "id",
+              "newParameterName": "id"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "expand"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "list_goalplanstate_for_sfodata",
+      "title": "list_GoalPlanState_for_sfodata",
+      "description": "Retrieve a list of entities from the GoalPlanState collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "GoalPlanState",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "inlinecount"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "create_goalplanstate_for_sfodata",
+      "title": "create_GoalPlanState_for_sfodata",
+      "description": "Create a new instance of the GoalPlanState EntitySet in the sfodata service. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "GoalPlanState",
+          "crudOperation": "create",
+          "parameters": [
+            {
+              "name": "auditComments",
+              "newParameterName": "auditcomments"
+            },
+            {
+              "name": "currentState",
+              "newParameterName": "currentstate"
+            },
+            {
+              "name": "planId",
+              "newParameterName": "planid"
+            },
+            {
+              "name": "stateId",
+              "newParameterName": "stateid"
+            },
+            {
+              "name": "userId",
+              "newParameterName": "userid"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "location"
+          },
+          {
+            "name": "content-id"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "update_goalplanstate_for_sfodata",
+      "title": "update_GoalPlanState_for_sfodata",
+      "description": "Update an entity in GoalPlanState EntitySet in the sfodata service. Provide the key properties to identify the entity and the properties to update in the request body. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "GoalPlanState",
+          "crudOperation": "update",
+          "parameters": [
+            {
+              "name": "planId",
+              "newParameterName": "planid"
+            },
+            {
+              "name": "stateId",
+              "newParameterName": "stateid"
+            },
+            {
+              "name": "userId",
+              "newParameterName": "userid"
+            },
+            {
+              "name": "auditComments",
+              "newParameterName": "auditcomments"
+            },
+            {
+              "name": "currentState",
+              "newParameterName": "currentstate"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "delete_goalplanstate_for_sfodata",
+      "title": "delete_GoalPlanState_for_sfodata",
+      "description": "Delete an entity from GoalPlanState EntitySet in the sfodata service.",
+      "odataType": {
+        "entitySet": {
+          "name": "GoalPlanState",
+          "crudOperation": "delete",
+          "parameters": [
+            {
+              "name": "planId",
+              "newParameterName": "planid"
+            },
+            {
+              "name": "stateId",
+              "newParameterName": "stateid"
+            },
+            {
+              "name": "userId",
+              "newParameterName": "userid"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "get_goalplanstate_for_sfodata",
+      "title": "get_GoalPlanState_for_sfodata",
+      "description": "Retrieve a single entity by its key from the GoalPlanState collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "GoalPlanState",
+          "crudOperation": "readByKey",
+          "parameters": [
+            {
+              "name": "planId",
+              "newParameterName": "planid"
+            },
+            {
+              "name": "stateId",
+              "newParameterName": "stateid"
+            },
+            {
+              "name": "userId",
+              "newParameterName": "userid"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "expand"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "list_goal_5_for_sfodata",
+      "title": "list_Goal_5_for_sfodata",
+      "description": "Retrieve a list of entities from the Goal_5 collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "Goal_5",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "inlinecount"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "create_goal_5_for_sfodata",
+      "title": "create_Goal_5_for_sfodata",
+      "description": "Create a new instance of the Goal_5 EntitySet in the sfodata service. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "Goal_5",
+          "crudOperation": "create",
+          "parameters": [
+            {
+              "name": "bizxActual",
+              "newParameterName": "bizxactual"
+            },
+            {
+              "name": "bizxPos",
+              "newParameterName": "bizxpos"
+            },
+            {
+              "name": "bizxPosLabel",
+              "newParameterName": "bizxposlabel"
+            },
+            {
+              "name": "bizxStrategic",
+              "newParameterName": "bizxstrategic"
+            },
+            {
+              "name": "bizxStrategicLabel",
+              "newParameterName": "bizxstrategiclabel"
+            },
+            {
+              "name": "bizxTarget",
+              "newParameterName": "bizxtarget"
+            },
+            {
+              "name": "category",
+              "newParameterName": "category"
+            },
+            {
+              "name": "done",
+              "newParameterName": "done"
+            },
+            {
+              "name": "due",
+              "newParameterName": "due"
+            },
+            {
+              "name": "flag",
+              "newParameterName": "flag"
+            },
+            {
+              "name": "id",
+              "newParameterName": "id"
+            },
+            {
+              "name": "lastModified",
+              "newParameterName": "lastmodified"
+            },
+            {
+              "name": "link",
+              "newParameterName": "link"
+            },
+            {
+              "name": "metric",
+              "newParameterName": "metric"
+            },
+            {
+              "name": "modifier",
+              "newParameterName": "modifier"
+            },
+            {
+              "name": "name",
+              "newParameterName": "name"
+            },
+            {
+              "name": "numbering",
+              "newParameterName": "numbering"
+            },
+            {
+              "name": "start",
+              "newParameterName": "start"
+            },
+            {
+              "name": "state",
+              "newParameterName": "state"
+            },
+            {
+              "name": "stateLabel",
+              "newParameterName": "statelabel"
+            },
+            {
+              "name": "status",
+              "newParameterName": "status"
+            },
+            {
+              "name": "type",
+              "newParameterName": "type"
+            },
+            {
+              "name": "userId",
+              "newParameterName": "userid"
+            },
+            {
+              "name": "weight",
+              "newParameterName": "weight"
+            },
+            {
+              "name": "comments",
+              "newParameterName": "comments"
+            },
+            {
+              "name": "milestones",
+              "newParameterName": "milestones"
+            },
+            {
+              "name": "permissionNav",
+              "newParameterName": "permissionnav"
+            },
+            {
+              "name": "tasks",
+              "newParameterName": "tasks"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "location"
+          },
+          {
+            "name": "content-id"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "update_goal_5_for_sfodata",
+      "title": "update_Goal_5_for_sfodata",
+      "description": "Update an entity in Goal_5 EntitySet in the sfodata service. Provide the key properties to identify the entity and the properties to update in the request body. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "Goal_5",
+          "crudOperation": "update",
+          "parameters": [
+            {
+              "name": "id",
+              "newParameterName": "id"
+            },
+            {
+              "name": "bizxActual",
+              "newParameterName": "bizxactual"
+            },
+            {
+              "name": "bizxPos",
+              "newParameterName": "bizxpos"
+            },
+            {
+              "name": "bizxStrategic",
+              "newParameterName": "bizxstrategic"
+            },
+            {
+              "name": "bizxTarget",
+              "newParameterName": "bizxtarget"
+            },
+            {
+              "name": "category",
+              "newParameterName": "category"
+            },
+            {
+              "name": "done",
+              "newParameterName": "done"
+            },
+            {
+              "name": "due",
+              "newParameterName": "due"
+            },
+            {
+              "name": "flag",
+              "newParameterName": "flag"
+            },
+            {
+              "name": "lastModified",
+              "newParameterName": "lastmodified"
+            },
+            {
+              "name": "link",
+              "newParameterName": "link"
+            },
+            {
+              "name": "metric",
+              "newParameterName": "metric"
+            },
+            {
+              "name": "modifier",
+              "newParameterName": "modifier"
+            },
+            {
+              "name": "name",
+              "newParameterName": "name"
+            },
+            {
+              "name": "numbering",
+              "newParameterName": "numbering"
+            },
+            {
+              "name": "start",
+              "newParameterName": "start"
+            },
+            {
+              "name": "state",
+              "newParameterName": "state"
+            },
+            {
+              "name": "status",
+              "newParameterName": "status"
+            },
+            {
+              "name": "type",
+              "newParameterName": "type"
+            },
+            {
+              "name": "userId",
+              "newParameterName": "userid"
+            },
+            {
+              "name": "weight",
+              "newParameterName": "weight"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "delete_goal_5_for_sfodata",
+      "title": "delete_Goal_5_for_sfodata",
+      "description": "Delete an entity from Goal_5 EntitySet in the sfodata service.",
+      "odataType": {
+        "entitySet": {
+          "name": "Goal_5",
+          "crudOperation": "delete",
+          "parameters": [
+            {
+              "name": "id",
+              "newParameterName": "id"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "get_goal_5_for_sfodata",
+      "title": "get_Goal_5_for_sfodata",
+      "description": "Retrieve a single entity by its key from the Goal_5 collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "Goal_5",
+          "crudOperation": "readByKey",
+          "parameters": [
+            {
+              "name": "id",
+              "newParameterName": "id"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "expand"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "list_goal_4_for_sfodata",
+      "title": "list_Goal_4_for_sfodata",
+      "description": "Retrieve a list of entities from the Goal_4 collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "Goal_4",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "inlinecount"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "create_goal_4_for_sfodata",
+      "title": "create_Goal_4_for_sfodata",
+      "description": "Create a new instance of the Goal_4 EntitySet in the sfodata service. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "Goal_4",
+          "crudOperation": "create",
+          "parameters": [
+            {
+              "name": "category",
+              "newParameterName": "category"
+            },
+            {
+              "name": "done",
+              "newParameterName": "done"
+            },
+            {
+              "name": "due",
+              "newParameterName": "due"
+            },
+            {
+              "name": "flag",
+              "newParameterName": "flag"
+            },
+            {
+              "name": "id",
+              "newParameterName": "id"
+            },
+            {
+              "name": "lastModified",
+              "newParameterName": "lastmodified"
+            },
+            {
+              "name": "metric",
+              "newParameterName": "metric"
+            },
+            {
+              "name": "modifier",
+              "newParameterName": "modifier"
+            },
+            {
+              "name": "name",
+              "newParameterName": "name"
+            },
+            {
+              "name": "numbering",
+              "newParameterName": "numbering"
+            },
+            {
+              "name": "start",
+              "newParameterName": "start"
+            },
+            {
+              "name": "state",
+              "newParameterName": "state"
+            },
+            {
+              "name": "stateLabel",
+              "newParameterName": "statelabel"
+            },
+            {
+              "name": "status",
+              "newParameterName": "status"
+            },
+            {
+              "name": "type",
+              "newParameterName": "type"
+            },
+            {
+              "name": "userId",
+              "newParameterName": "userid"
+            },
+            {
+              "name": "weight",
+              "newParameterName": "weight"
+            },
+            {
+              "name": "milestones",
+              "newParameterName": "milestones"
+            },
+            {
+              "name": "permissionNav",
+              "newParameterName": "permissionnav"
+            },
+            {
+              "name": "tasks",
+              "newParameterName": "tasks"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "location"
+          },
+          {
+            "name": "content-id"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "update_goal_4_for_sfodata",
+      "title": "update_Goal_4_for_sfodata",
+      "description": "Update an entity in Goal_4 EntitySet in the sfodata service. Provide the key properties to identify the entity and the properties to update in the request body. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "Goal_4",
+          "crudOperation": "update",
+          "parameters": [
+            {
+              "name": "id",
+              "newParameterName": "id"
+            },
+            {
+              "name": "category",
+              "newParameterName": "category"
+            },
+            {
+              "name": "done",
+              "newParameterName": "done"
+            },
+            {
+              "name": "due",
+              "newParameterName": "due"
+            },
+            {
+              "name": "flag",
+              "newParameterName": "flag"
+            },
+            {
+              "name": "lastModified",
+              "newParameterName": "lastmodified"
+            },
+            {
+              "name": "metric",
+              "newParameterName": "metric"
+            },
+            {
+              "name": "modifier",
+              "newParameterName": "modifier"
+            },
+            {
+              "name": "name",
+              "newParameterName": "name"
+            },
+            {
+              "name": "numbering",
+              "newParameterName": "numbering"
+            },
+            {
+              "name": "start",
+              "newParameterName": "start"
+            },
+            {
+              "name": "state",
+              "newParameterName": "state"
+            },
+            {
+              "name": "status",
+              "newParameterName": "status"
+            },
+            {
+              "name": "type",
+              "newParameterName": "type"
+            },
+            {
+              "name": "userId",
+              "newParameterName": "userid"
+            },
+            {
+              "name": "weight",
+              "newParameterName": "weight"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "delete_goal_4_for_sfodata",
+      "title": "delete_Goal_4_for_sfodata",
+      "description": "Delete an entity from Goal_4 EntitySet in the sfodata service.",
+      "odataType": {
+        "entitySet": {
+          "name": "Goal_4",
+          "crudOperation": "delete",
+          "parameters": [
+            {
+              "name": "id",
+              "newParameterName": "id"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "get_goal_4_for_sfodata",
+      "title": "get_Goal_4_for_sfodata",
+      "description": "Retrieve a single entity by its key from the Goal_4 collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "Goal_4",
+          "crudOperation": "readByKey",
+          "parameters": [
+            {
+              "name": "id",
+              "newParameterName": "id"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "expand"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "list_goal_7_for_sfodata",
+      "title": "list_Goal_7_for_sfodata",
+      "description": "Retrieve a list of entities from the Goal_7 collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "Goal_7",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "inlinecount"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "create_goal_7_for_sfodata",
+      "title": "create_Goal_7_for_sfodata",
+      "description": "Create a new instance of the Goal_7 EntitySet in the sfodata service. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "Goal_7",
+          "crudOperation": "create",
+          "parameters": [
+            {
+              "name": "actualAchievement",
+              "newParameterName": "actualachievement"
+            },
+            {
+              "name": "actualAchievementText",
+              "newParameterName": "actualachievementtext"
+            },
+            {
+              "name": "bizxActual",
+              "newParameterName": "bizxactual"
+            },
+            {
+              "name": "bizxPos",
+              "newParameterName": "bizxpos"
+            },
+            {
+              "name": "bizxPosLabel",
+              "newParameterName": "bizxposlabel"
+            },
+            {
+              "name": "bizxStrategic",
+              "newParameterName": "bizxstrategic"
+            },
+            {
+              "name": "bizxStrategicLabel",
+              "newParameterName": "bizxstrategiclabel"
+            },
+            {
+              "name": "bizxTarget",
+              "newParameterName": "bizxtarget"
+            },
+            {
+              "name": "category",
+              "newParameterName": "category"
+            },
+            {
+              "name": "description",
+              "newParameterName": "description"
+            },
+            {
+              "name": "done",
+              "newParameterName": "done"
+            },
+            {
+              "name": "due",
+              "newParameterName": "due"
+            },
+            {
+              "name": "flag",
+              "newParameterName": "flag"
+            },
+            {
+              "name": "forecast",
+              "newParameterName": "forecast"
+            },
+            {
+              "name": "id",
+              "newParameterName": "id"
+            },
+            {
+              "name": "lastModified",
+              "newParameterName": "lastmodified"
+            },
+            {
+              "name": "link",
+              "newParameterName": "link"
+            },
+            {
+              "name": "metric",
+              "newParameterName": "metric"
+            },
+            {
+              "name": "mltAchievementType",
+              "newParameterName": "mltachievementtype"
+            },
+            {
+              "name": "modifier",
+              "newParameterName": "modifier"
+            },
+            {
+              "name": "name",
+              "newParameterName": "name"
+            },
+            {
+              "name": "numbering",
+              "newParameterName": "numbering"
+            },
+            {
+              "name": "rating",
+              "newParameterName": "rating"
+            },
+            {
+              "name": "start",
+              "newParameterName": "start"
+            },
+            {
+              "name": "state",
+              "newParameterName": "state"
+            },
+            {
+              "name": "stateLabel",
+              "newParameterName": "statelabel"
+            },
+            {
+              "name": "status",
+              "newParameterName": "status"
+            },
+            {
+              "name": "target",
+              "newParameterName": "target"
+            },
+            {
+              "name": "targetBaseline",
+              "newParameterName": "targetbaseline"
+            },
+            {
+              "name": "type",
+              "newParameterName": "type"
+            },
+            {
+              "name": "userId",
+              "newParameterName": "userid"
+            },
+            {
+              "name": "weight",
+              "newParameterName": "weight"
+            },
+            {
+              "name": "metriclookup",
+              "newParameterName": "metriclookup"
+            },
+            {
+              "name": "milestones",
+              "newParameterName": "milestones"
+            },
+            {
+              "name": "permissionNav",
+              "newParameterName": "permissionnav"
+            },
+            {
+              "name": "targets",
+              "newParameterName": "targets"
+            },
+            {
+              "name": "tasks",
+              "newParameterName": "tasks"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "location"
+          },
+          {
+            "name": "content-id"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "update_goal_7_for_sfodata",
+      "title": "update_Goal_7_for_sfodata",
+      "description": "Update an entity in Goal_7 EntitySet in the sfodata service. Provide the key properties to identify the entity and the properties to update in the request body. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "Goal_7",
+          "crudOperation": "update",
+          "parameters": [
+            {
+              "name": "id",
+              "newParameterName": "id"
+            },
+            {
+              "name": "actualAchievement",
+              "newParameterName": "actualachievement"
+            },
+            {
+              "name": "actualAchievementText",
+              "newParameterName": "actualachievementtext"
+            },
+            {
+              "name": "bizxActual",
+              "newParameterName": "bizxactual"
+            },
+            {
+              "name": "bizxPos",
+              "newParameterName": "bizxpos"
+            },
+            {
+              "name": "bizxStrategic",
+              "newParameterName": "bizxstrategic"
+            },
+            {
+              "name": "bizxTarget",
+              "newParameterName": "bizxtarget"
+            },
+            {
+              "name": "category",
+              "newParameterName": "category"
+            },
+            {
+              "name": "description",
+              "newParameterName": "description"
+            },
+            {
+              "name": "done",
+              "newParameterName": "done"
+            },
+            {
+              "name": "due",
+              "newParameterName": "due"
+            },
+            {
+              "name": "flag",
+              "newParameterName": "flag"
+            },
+            {
+              "name": "forecast",
+              "newParameterName": "forecast"
+            },
+            {
+              "name": "lastModified",
+              "newParameterName": "lastmodified"
+            },
+            {
+              "name": "link",
+              "newParameterName": "link"
+            },
+            {
+              "name": "metric",
+              "newParameterName": "metric"
+            },
+            {
+              "name": "mltAchievementType",
+              "newParameterName": "mltachievementtype"
+            },
+            {
+              "name": "modifier",
+              "newParameterName": "modifier"
+            },
+            {
+              "name": "name",
+              "newParameterName": "name"
+            },
+            {
+              "name": "numbering",
+              "newParameterName": "numbering"
+            },
+            {
+              "name": "rating",
+              "newParameterName": "rating"
+            },
+            {
+              "name": "start",
+              "newParameterName": "start"
+            },
+            {
+              "name": "state",
+              "newParameterName": "state"
+            },
+            {
+              "name": "status",
+              "newParameterName": "status"
+            },
+            {
+              "name": "target",
+              "newParameterName": "target"
+            },
+            {
+              "name": "targetBaseline",
+              "newParameterName": "targetbaseline"
+            },
+            {
+              "name": "type",
+              "newParameterName": "type"
+            },
+            {
+              "name": "userId",
+              "newParameterName": "userid"
+            },
+            {
+              "name": "weight",
+              "newParameterName": "weight"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "delete_goal_7_for_sfodata",
+      "title": "delete_Goal_7_for_sfodata",
+      "description": "Delete an entity from Goal_7 EntitySet in the sfodata service.",
+      "odataType": {
+        "entitySet": {
+          "name": "Goal_7",
+          "crudOperation": "delete",
+          "parameters": [
+            {
+              "name": "id",
+              "newParameterName": "id"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "get_goal_7_for_sfodata",
+      "title": "get_Goal_7_for_sfodata",
+      "description": "Retrieve a single entity by its key from the Goal_7 collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "Goal_7",
+          "crudOperation": "readByKey",
+          "parameters": [
+            {
+              "name": "id",
+              "newParameterName": "id"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "expand"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "list_goal_6_for_sfodata",
+      "title": "list_Goal_6_for_sfodata",
+      "description": "Retrieve a list of entities from the Goal_6 collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "Goal_6",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "inlinecount"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "create_goal_6_for_sfodata",
+      "title": "create_Goal_6_for_sfodata",
+      "description": "Create a new instance of the Goal_6 EntitySet in the sfodata service. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "Goal_6",
+          "crudOperation": "create",
+          "parameters": [
+            {
+              "name": "category",
+              "newParameterName": "category"
+            },
+            {
+              "name": "due",
+              "newParameterName": "due"
+            },
+            {
+              "name": "flag",
+              "newParameterName": "flag"
+            },
+            {
+              "name": "id",
+              "newParameterName": "id"
+            },
+            {
+              "name": "lastModified",
+              "newParameterName": "lastmodified"
+            },
+            {
+              "name": "metric",
+              "newParameterName": "metric"
+            },
+            {
+              "name": "modifier",
+              "newParameterName": "modifier"
+            },
+            {
+              "name": "name",
+              "newParameterName": "name"
+            },
+            {
+              "name": "numbering",
+              "newParameterName": "numbering"
+            },
+            {
+              "name": "start",
+              "newParameterName": "start"
+            },
+            {
+              "name": "state",
+              "newParameterName": "state"
+            },
+            {
+              "name": "stateLabel",
+              "newParameterName": "statelabel"
+            },
+            {
+              "name": "status",
+              "newParameterName": "status"
+            },
+            {
+              "name": "type",
+              "newParameterName": "type"
+            },
+            {
+              "name": "userId",
+              "newParameterName": "userid"
+            },
+            {
+              "name": "permissionNav",
+              "newParameterName": "permissionnav"
+            },
+            {
+              "name": "tasks",
+              "newParameterName": "tasks"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "location"
+          },
+          {
+            "name": "content-id"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "update_goal_6_for_sfodata",
+      "title": "update_Goal_6_for_sfodata",
+      "description": "Update an entity in Goal_6 EntitySet in the sfodata service. Provide the key properties to identify the entity and the properties to update in the request body. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "Goal_6",
+          "crudOperation": "update",
+          "parameters": [
+            {
+              "name": "id",
+              "newParameterName": "id"
+            },
+            {
+              "name": "category",
+              "newParameterName": "category"
+            },
+            {
+              "name": "due",
+              "newParameterName": "due"
+            },
+            {
+              "name": "flag",
+              "newParameterName": "flag"
+            },
+            {
+              "name": "lastModified",
+              "newParameterName": "lastmodified"
+            },
+            {
+              "name": "metric",
+              "newParameterName": "metric"
+            },
+            {
+              "name": "modifier",
+              "newParameterName": "modifier"
+            },
+            {
+              "name": "name",
+              "newParameterName": "name"
+            },
+            {
+              "name": "numbering",
+              "newParameterName": "numbering"
+            },
+            {
+              "name": "start",
+              "newParameterName": "start"
+            },
+            {
+              "name": "state",
+              "newParameterName": "state"
+            },
+            {
+              "name": "status",
+              "newParameterName": "status"
+            },
+            {
+              "name": "type",
+              "newParameterName": "type"
+            },
+            {
+              "name": "userId",
+              "newParameterName": "userid"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "delete_goal_6_for_sfodata",
+      "title": "delete_Goal_6_for_sfodata",
+      "description": "Delete an entity from Goal_6 EntitySet in the sfodata service.",
+      "odataType": {
+        "entitySet": {
+          "name": "Goal_6",
+          "crudOperation": "delete",
+          "parameters": [
+            {
+              "name": "id",
+              "newParameterName": "id"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "get_goal_6_for_sfodata",
+      "title": "get_Goal_6_for_sfodata",
+      "description": "Retrieve a single entity by its key from the Goal_6 collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "Goal_6",
+          "crudOperation": "readByKey",
+          "parameters": [
+            {
+              "name": "id",
+              "newParameterName": "id"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "expand"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "list_goal_8_for_sfodata",
+      "title": "list_Goal_8_for_sfodata",
+      "description": "Retrieve a list of entities from the Goal_8 collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "Goal_8",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "inlinecount"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "create_goal_8_for_sfodata",
+      "title": "create_Goal_8_for_sfodata",
+      "description": "Create a new instance of the Goal_8 EntitySet in the sfodata service. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "Goal_8",
+          "crudOperation": "create",
+          "parameters": [
+            {
+              "name": "category",
+              "newParameterName": "category"
+            },
+            {
+              "name": "done",
+              "newParameterName": "done"
+            },
+            {
+              "name": "due",
+              "newParameterName": "due"
+            },
+            {
+              "name": "flag",
+              "newParameterName": "flag"
+            },
+            {
+              "name": "id",
+              "newParameterName": "id"
+            },
+            {
+              "name": "lastModified",
+              "newParameterName": "lastmodified"
+            },
+            {
+              "name": "link",
+              "newParameterName": "link"
+            },
+            {
+              "name": "metric",
+              "newParameterName": "metric"
+            },
+            {
+              "name": "modifier",
+              "newParameterName": "modifier"
+            },
+            {
+              "name": "name",
+              "newParameterName": "name"
+            },
+            {
+              "name": "numbering",
+              "newParameterName": "numbering"
+            },
+            {
+              "name": "start",
+              "newParameterName": "start"
+            },
+            {
+              "name": "state",
+              "newParameterName": "state"
+            },
+            {
+              "name": "stateLabel",
+              "newParameterName": "statelabel"
+            },
+            {
+              "name": "status",
+              "newParameterName": "status"
+            },
+            {
+              "name": "type",
+              "newParameterName": "type"
+            },
+            {
+              "name": "userId",
+              "newParameterName": "userid"
+            },
+            {
+              "name": "permissionNav",
+              "newParameterName": "permissionnav"
+            },
+            {
+              "name": "tasks",
+              "newParameterName": "tasks"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "location"
+          },
+          {
+            "name": "content-id"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "update_goal_8_for_sfodata",
+      "title": "update_Goal_8_for_sfodata",
+      "description": "Update an entity in Goal_8 EntitySet in the sfodata service. Provide the key properties to identify the entity and the properties to update in the request body. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "Goal_8",
+          "crudOperation": "update",
+          "parameters": [
+            {
+              "name": "id",
+              "newParameterName": "id"
+            },
+            {
+              "name": "category",
+              "newParameterName": "category"
+            },
+            {
+              "name": "done",
+              "newParameterName": "done"
+            },
+            {
+              "name": "due",
+              "newParameterName": "due"
+            },
+            {
+              "name": "flag",
+              "newParameterName": "flag"
+            },
+            {
+              "name": "lastModified",
+              "newParameterName": "lastmodified"
+            },
+            {
+              "name": "link",
+              "newParameterName": "link"
+            },
+            {
+              "name": "metric",
+              "newParameterName": "metric"
+            },
+            {
+              "name": "modifier",
+              "newParameterName": "modifier"
+            },
+            {
+              "name": "name",
+              "newParameterName": "name"
+            },
+            {
+              "name": "numbering",
+              "newParameterName": "numbering"
+            },
+            {
+              "name": "start",
+              "newParameterName": "start"
+            },
+            {
+              "name": "state",
+              "newParameterName": "state"
+            },
+            {
+              "name": "status",
+              "newParameterName": "status"
+            },
+            {
+              "name": "type",
+              "newParameterName": "type"
+            },
+            {
+              "name": "userId",
+              "newParameterName": "userid"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "delete_goal_8_for_sfodata",
+      "title": "delete_Goal_8_for_sfodata",
+      "description": "Delete an entity from Goal_8 EntitySet in the sfodata service.",
+      "odataType": {
+        "entitySet": {
+          "name": "Goal_8",
+          "crudOperation": "delete",
+          "parameters": [
+            {
+              "name": "id",
+              "newParameterName": "id"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "get_goal_8_for_sfodata",
+      "title": "get_Goal_8_for_sfodata",
+      "description": "Retrieve a single entity by its key from the Goal_8 collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "Goal_8",
+          "crudOperation": "readByKey",
+          "parameters": [
+            {
+              "name": "id",
+              "newParameterName": "id"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "expand"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "list_goal_1_for_sfodata",
+      "title": "list_Goal_1_for_sfodata",
+      "description": "Retrieve a list of entities from the Goal_1 collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "Goal_1",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "inlinecount"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "create_goal_1_for_sfodata",
+      "title": "create_Goal_1_for_sfodata",
+      "description": "Create a new instance of the Goal_1 EntitySet in the sfodata service. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "Goal_1",
+          "crudOperation": "create",
+          "parameters": [
+            {
+              "name": "bizxActual",
+              "newParameterName": "bizxactual"
+            },
+            {
+              "name": "bizxPos",
+              "newParameterName": "bizxpos"
+            },
+            {
+              "name": "bizxPosLabel",
+              "newParameterName": "bizxposlabel"
+            },
+            {
+              "name": "bizxStrategic",
+              "newParameterName": "bizxstrategic"
+            },
+            {
+              "name": "bizxStrategicLabel",
+              "newParameterName": "bizxstrategiclabel"
+            },
+            {
+              "name": "bizxTarget",
+              "newParameterName": "bizxtarget"
+            },
+            {
+              "name": "category",
+              "newParameterName": "category"
+            },
+            {
+              "name": "done",
+              "newParameterName": "done"
+            },
+            {
+              "name": "due",
+              "newParameterName": "due"
+            },
+            {
+              "name": "flag",
+              "newParameterName": "flag"
+            },
+            {
+              "name": "id",
+              "newParameterName": "id"
+            },
+            {
+              "name": "lastModified",
+              "newParameterName": "lastmodified"
+            },
+            {
+              "name": "link",
+              "newParameterName": "link"
+            },
+            {
+              "name": "metric",
+              "newParameterName": "metric"
+            },
+            {
+              "name": "modifier",
+              "newParameterName": "modifier"
+            },
+            {
+              "name": "name",
+              "newParameterName": "name"
+            },
+            {
+              "name": "numbering",
+              "newParameterName": "numbering"
+            },
+            {
+              "name": "start",
+              "newParameterName": "start"
+            },
+            {
+              "name": "state",
+              "newParameterName": "state"
+            },
+            {
+              "name": "stateLabel",
+              "newParameterName": "statelabel"
+            },
+            {
+              "name": "status",
+              "newParameterName": "status"
+            },
+            {
+              "name": "type",
+              "newParameterName": "type"
+            },
+            {
+              "name": "userId",
+              "newParameterName": "userid"
+            },
+            {
+              "name": "weight",
+              "newParameterName": "weight"
+            },
+            {
+              "name": "comments",
+              "newParameterName": "comments"
+            },
+            {
+              "name": "milestones",
+              "newParameterName": "milestones"
+            },
+            {
+              "name": "permissionNav",
+              "newParameterName": "permissionnav"
+            },
+            {
+              "name": "tasks",
+              "newParameterName": "tasks"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "location"
+          },
+          {
+            "name": "content-id"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "update_goal_1_for_sfodata",
+      "title": "update_Goal_1_for_sfodata",
+      "description": "Update an entity in Goal_1 EntitySet in the sfodata service. Provide the key properties to identify the entity and the properties to update in the request body. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "Goal_1",
+          "crudOperation": "update",
+          "parameters": [
+            {
+              "name": "id",
+              "newParameterName": "id"
+            },
+            {
+              "name": "bizxActual",
+              "newParameterName": "bizxactual"
+            },
+            {
+              "name": "bizxPos",
+              "newParameterName": "bizxpos"
+            },
+            {
+              "name": "bizxStrategic",
+              "newParameterName": "bizxstrategic"
+            },
+            {
+              "name": "bizxTarget",
+              "newParameterName": "bizxtarget"
+            },
+            {
+              "name": "category",
+              "newParameterName": "category"
+            },
+            {
+              "name": "done",
+              "newParameterName": "done"
+            },
+            {
+              "name": "due",
+              "newParameterName": "due"
+            },
+            {
+              "name": "flag",
+              "newParameterName": "flag"
+            },
+            {
+              "name": "lastModified",
+              "newParameterName": "lastmodified"
+            },
+            {
+              "name": "link",
+              "newParameterName": "link"
+            },
+            {
+              "name": "metric",
+              "newParameterName": "metric"
+            },
+            {
+              "name": "modifier",
+              "newParameterName": "modifier"
+            },
+            {
+              "name": "name",
+              "newParameterName": "name"
+            },
+            {
+              "name": "numbering",
+              "newParameterName": "numbering"
+            },
+            {
+              "name": "start",
+              "newParameterName": "start"
+            },
+            {
+              "name": "state",
+              "newParameterName": "state"
+            },
+            {
+              "name": "status",
+              "newParameterName": "status"
+            },
+            {
+              "name": "type",
+              "newParameterName": "type"
+            },
+            {
+              "name": "userId",
+              "newParameterName": "userid"
+            },
+            {
+              "name": "weight",
+              "newParameterName": "weight"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "delete_goal_1_for_sfodata",
+      "title": "delete_Goal_1_for_sfodata",
+      "description": "Delete an entity from Goal_1 EntitySet in the sfodata service.",
+      "odataType": {
+        "entitySet": {
+          "name": "Goal_1",
+          "crudOperation": "delete",
+          "parameters": [
+            {
+              "name": "id",
+              "newParameterName": "id"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "get_goal_1_for_sfodata",
+      "title": "get_Goal_1_for_sfodata",
+      "description": "Retrieve a single entity by its key from the Goal_1 collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "Goal_1",
+          "crudOperation": "readByKey",
+          "parameters": [
+            {
+              "name": "id",
+              "newParameterName": "id"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "expand"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "list_goal_3_for_sfodata",
+      "title": "list_Goal_3_for_sfodata",
+      "description": "Retrieve a list of entities from the Goal_3 collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "Goal_3",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "inlinecount"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "create_goal_3_for_sfodata",
+      "title": "create_Goal_3_for_sfodata",
+      "description": "Create a new instance of the Goal_3 EntitySet in the sfodata service. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "Goal_3",
+          "crudOperation": "create",
+          "parameters": [
+            {
+              "name": "category",
+              "newParameterName": "category"
+            },
+            {
+              "name": "done",
+              "newParameterName": "done"
+            },
+            {
+              "name": "due",
+              "newParameterName": "due"
+            },
+            {
+              "name": "flag",
+              "newParameterName": "flag"
+            },
+            {
+              "name": "id",
+              "newParameterName": "id"
+            },
+            {
+              "name": "lastModified",
+              "newParameterName": "lastmodified"
+            },
+            {
+              "name": "metric",
+              "newParameterName": "metric"
+            },
+            {
+              "name": "modifier",
+              "newParameterName": "modifier"
+            },
+            {
+              "name": "name",
+              "newParameterName": "name"
+            },
+            {
+              "name": "numbering",
+              "newParameterName": "numbering"
+            },
+            {
+              "name": "start",
+              "newParameterName": "start"
+            },
+            {
+              "name": "state",
+              "newParameterName": "state"
+            },
+            {
+              "name": "stateLabel",
+              "newParameterName": "statelabel"
+            },
+            {
+              "name": "status",
+              "newParameterName": "status"
+            },
+            {
+              "name": "type",
+              "newParameterName": "type"
+            },
+            {
+              "name": "userId",
+              "newParameterName": "userid"
+            },
+            {
+              "name": "weight",
+              "newParameterName": "weight"
+            },
+            {
+              "name": "milestones",
+              "newParameterName": "milestones"
+            },
+            {
+              "name": "permissionNav",
+              "newParameterName": "permissionnav"
+            },
+            {
+              "name": "tasks",
+              "newParameterName": "tasks"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "location"
+          },
+          {
+            "name": "content-id"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "update_goal_3_for_sfodata",
+      "title": "update_Goal_3_for_sfodata",
+      "description": "Update an entity in Goal_3 EntitySet in the sfodata service. Provide the key properties to identify the entity and the properties to update in the request body. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "Goal_3",
+          "crudOperation": "update",
+          "parameters": [
+            {
+              "name": "id",
+              "newParameterName": "id"
+            },
+            {
+              "name": "category",
+              "newParameterName": "category"
+            },
+            {
+              "name": "done",
+              "newParameterName": "done"
+            },
+            {
+              "name": "due",
+              "newParameterName": "due"
+            },
+            {
+              "name": "flag",
+              "newParameterName": "flag"
+            },
+            {
+              "name": "lastModified",
+              "newParameterName": "lastmodified"
+            },
+            {
+              "name": "metric",
+              "newParameterName": "metric"
+            },
+            {
+              "name": "modifier",
+              "newParameterName": "modifier"
+            },
+            {
+              "name": "name",
+              "newParameterName": "name"
+            },
+            {
+              "name": "numbering",
+              "newParameterName": "numbering"
+            },
+            {
+              "name": "start",
+              "newParameterName": "start"
+            },
+            {
+              "name": "state",
+              "newParameterName": "state"
+            },
+            {
+              "name": "status",
+              "newParameterName": "status"
+            },
+            {
+              "name": "type",
+              "newParameterName": "type"
+            },
+            {
+              "name": "userId",
+              "newParameterName": "userid"
+            },
+            {
+              "name": "weight",
+              "newParameterName": "weight"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "delete_goal_3_for_sfodata",
+      "title": "delete_Goal_3_for_sfodata",
+      "description": "Delete an entity from Goal_3 EntitySet in the sfodata service.",
+      "odataType": {
+        "entitySet": {
+          "name": "Goal_3",
+          "crudOperation": "delete",
+          "parameters": [
+            {
+              "name": "id",
+              "newParameterName": "id"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "get_goal_3_for_sfodata",
+      "title": "get_Goal_3_for_sfodata",
+      "description": "Retrieve a single entity by its key from the Goal_3 collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "Goal_3",
+          "crudOperation": "readByKey",
+          "parameters": [
+            {
+              "name": "id",
+              "newParameterName": "id"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "expand"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "list_goal_2_for_sfodata",
+      "title": "list_Goal_2_for_sfodata",
+      "description": "Retrieve a list of entities from the Goal_2 collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "Goal_2",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "inlinecount"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "create_goal_2_for_sfodata",
+      "title": "create_Goal_2_for_sfodata",
+      "description": "Create a new instance of the Goal_2 EntitySet in the sfodata service. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "Goal_2",
+          "crudOperation": "create",
+          "parameters": [
+            {
+              "name": "category",
+              "newParameterName": "category"
+            },
+            {
+              "name": "done",
+              "newParameterName": "done"
+            },
+            {
+              "name": "due",
+              "newParameterName": "due"
+            },
+            {
+              "name": "flag",
+              "newParameterName": "flag"
+            },
+            {
+              "name": "id",
+              "newParameterName": "id"
+            },
+            {
+              "name": "lastModified",
+              "newParameterName": "lastmodified"
+            },
+            {
+              "name": "metric",
+              "newParameterName": "metric"
+            },
+            {
+              "name": "modifier",
+              "newParameterName": "modifier"
+            },
+            {
+              "name": "name",
+              "newParameterName": "name"
+            },
+            {
+              "name": "numbering",
+              "newParameterName": "numbering"
+            },
+            {
+              "name": "start",
+              "newParameterName": "start"
+            },
+            {
+              "name": "state",
+              "newParameterName": "state"
+            },
+            {
+              "name": "stateLabel",
+              "newParameterName": "statelabel"
+            },
+            {
+              "name": "status",
+              "newParameterName": "status"
+            },
+            {
+              "name": "type",
+              "newParameterName": "type"
+            },
+            {
+              "name": "userId",
+              "newParameterName": "userid"
+            },
+            {
+              "name": "weight",
+              "newParameterName": "weight"
+            },
+            {
+              "name": "milestones",
+              "newParameterName": "milestones"
+            },
+            {
+              "name": "permissionNav",
+              "newParameterName": "permissionnav"
+            },
+            {
+              "name": "tasks",
+              "newParameterName": "tasks"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "location"
+          },
+          {
+            "name": "content-id"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "update_goal_2_for_sfodata",
+      "title": "update_Goal_2_for_sfodata",
+      "description": "Update an entity in Goal_2 EntitySet in the sfodata service. Provide the key properties to identify the entity and the properties to update in the request body. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "Goal_2",
+          "crudOperation": "update",
+          "parameters": [
+            {
+              "name": "id",
+              "newParameterName": "id"
+            },
+            {
+              "name": "category",
+              "newParameterName": "category"
+            },
+            {
+              "name": "done",
+              "newParameterName": "done"
+            },
+            {
+              "name": "due",
+              "newParameterName": "due"
+            },
+            {
+              "name": "flag",
+              "newParameterName": "flag"
+            },
+            {
+              "name": "lastModified",
+              "newParameterName": "lastmodified"
+            },
+            {
+              "name": "metric",
+              "newParameterName": "metric"
+            },
+            {
+              "name": "modifier",
+              "newParameterName": "modifier"
+            },
+            {
+              "name": "name",
+              "newParameterName": "name"
+            },
+            {
+              "name": "numbering",
+              "newParameterName": "numbering"
+            },
+            {
+              "name": "start",
+              "newParameterName": "start"
+            },
+            {
+              "name": "state",
+              "newParameterName": "state"
+            },
+            {
+              "name": "status",
+              "newParameterName": "status"
+            },
+            {
+              "name": "type",
+              "newParameterName": "type"
+            },
+            {
+              "name": "userId",
+              "newParameterName": "userid"
+            },
+            {
+              "name": "weight",
+              "newParameterName": "weight"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "delete_goal_2_for_sfodata",
+      "title": "delete_Goal_2_for_sfodata",
+      "description": "Delete an entity from Goal_2 EntitySet in the sfodata service.",
+      "odataType": {
+        "entitySet": {
+          "name": "Goal_2",
+          "crudOperation": "delete",
+          "parameters": [
+            {
+              "name": "id",
+              "newParameterName": "id"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "get_goal_2_for_sfodata",
+      "title": "get_Goal_2_for_sfodata",
+      "description": "Retrieve a single entity by its key from the Goal_2 collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "Goal_2",
+          "crudOperation": "readByKey",
+          "parameters": [
+            {
+              "name": "id",
+              "newParameterName": "id"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "expand"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "list_goal_101_for_sfodata",
+      "title": "list_Goal_101_for_sfodata",
+      "description": "Retrieve a list of entities from the Goal_101 collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "Goal_101",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "inlinecount"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "create_goal_101_for_sfodata",
+      "title": "create_Goal_101_for_sfodata",
+      "description": "Create a new instance of the Goal_101 EntitySet in the sfodata service. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "Goal_101",
+          "crudOperation": "create",
+          "parameters": [
+            {
+              "name": "category",
+              "newParameterName": "category"
+            },
+            {
+              "name": "due",
+              "newParameterName": "due"
+            },
+            {
+              "name": "flag",
+              "newParameterName": "flag"
+            },
+            {
+              "name": "id",
+              "newParameterName": "id"
+            },
+            {
+              "name": "lastModified",
+              "newParameterName": "lastmodified"
+            },
+            {
+              "name": "metric",
+              "newParameterName": "metric"
+            },
+            {
+              "name": "modifier",
+              "newParameterName": "modifier"
+            },
+            {
+              "name": "name",
+              "newParameterName": "name"
+            },
+            {
+              "name": "numbering",
+              "newParameterName": "numbering"
+            },
+            {
+              "name": "start",
+              "newParameterName": "start"
+            },
+            {
+              "name": "state",
+              "newParameterName": "state"
+            },
+            {
+              "name": "stateLabel",
+              "newParameterName": "statelabel"
+            },
+            {
+              "name": "status",
+              "newParameterName": "status"
+            },
+            {
+              "name": "type",
+              "newParameterName": "type"
+            },
+            {
+              "name": "userId",
+              "newParameterName": "userid"
+            },
+            {
+              "name": "permissionNav",
+              "newParameterName": "permissionnav"
+            },
+            {
+              "name": "tasks",
+              "newParameterName": "tasks"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "location"
+          },
+          {
+            "name": "content-id"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "update_goal_101_for_sfodata",
+      "title": "update_Goal_101_for_sfodata",
+      "description": "Update an entity in Goal_101 EntitySet in the sfodata service. Provide the key properties to identify the entity and the properties to update in the request body. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "Goal_101",
+          "crudOperation": "update",
+          "parameters": [
+            {
+              "name": "id",
+              "newParameterName": "id"
+            },
+            {
+              "name": "category",
+              "newParameterName": "category"
+            },
+            {
+              "name": "due",
+              "newParameterName": "due"
+            },
+            {
+              "name": "flag",
+              "newParameterName": "flag"
+            },
+            {
+              "name": "lastModified",
+              "newParameterName": "lastmodified"
+            },
+            {
+              "name": "metric",
+              "newParameterName": "metric"
+            },
+            {
+              "name": "modifier",
+              "newParameterName": "modifier"
+            },
+            {
+              "name": "name",
+              "newParameterName": "name"
+            },
+            {
+              "name": "numbering",
+              "newParameterName": "numbering"
+            },
+            {
+              "name": "start",
+              "newParameterName": "start"
+            },
+            {
+              "name": "state",
+              "newParameterName": "state"
+            },
+            {
+              "name": "status",
+              "newParameterName": "status"
+            },
+            {
+              "name": "type",
+              "newParameterName": "type"
+            },
+            {
+              "name": "userId",
+              "newParameterName": "userid"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "delete_goal_101_for_sfodata",
+      "title": "delete_Goal_101_for_sfodata",
+      "description": "Delete an entity from Goal_101 EntitySet in the sfodata service.",
+      "odataType": {
+        "entitySet": {
+          "name": "Goal_101",
+          "crudOperation": "delete",
+          "parameters": [
+            {
+              "name": "id",
+              "newParameterName": "id"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "get_goal_101_for_sfodata",
+      "title": "get_Goal_101_for_sfodata",
+      "description": "Retrieve a single entity by its key from the Goal_101 collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "Goal_101",
+          "crudOperation": "readByKey",
+          "parameters": [
+            {
+              "name": "id",
+              "newParameterName": "id"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "expand"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    }
+  ]
+}

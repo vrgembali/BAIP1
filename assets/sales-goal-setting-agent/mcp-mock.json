@@ -1,0 +1,407 @@
+{
+  "servers": {
+    "sap-sf-performanceandgoalspmgm": {
+      "mcp_server_name": "sap.mcp/sfodata",
+      "description": "MCP server for SAP SuccessFactors Performance and Goal Management (PMGM) operations.",
+      "tools": {
+        "get_metadata_sfodata": {
+          "description": "Get metadata of the OData service with optional filtering to reduce token consumption.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "filter": { "type": "string", "description": "Optional filter for metadata" }
+            },
+            "required": []
+          },
+          "mock_response": {
+            "edmx": "<edmx:Edmx Version=\"1.0\"><edmx:DataServices><Schema Namespace=\"SFOData\"><EntityType Name=\"Goal_1\"><Key><PropertyRef Name=\"id\"/></Key><Property Name=\"id\" Type=\"Edm.Int64\"/><Property Name=\"name\" Type=\"Edm.String\"/><Property Name=\"metric\" Type=\"Edm.String\"/><Property Name=\"status\" Type=\"Edm.String\"/><Property Name=\"userId\" Type=\"Edm.String\"/></EntityType></Schema></edmx:DataServices></edmx:Edmx>"
+          }
+        },
+        "batch_for_sfodata": {
+          "description": "Execute multiple OData operations in a single batch request.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "requests": { "type": "array", "description": "Array of batch requests" }
+            },
+            "required": ["requests"]
+          },
+          "mock_response": {
+            "responses": [
+              { "status": 200, "body": {} }
+            ]
+          }
+        },
+        "list_goalplantemplate_for_sfodata": {
+          "description": "Retrieve a list of GoalPlanTemplate entities from SAP SuccessFactors.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "filter": { "type": "string", "description": "OData filter expression" },
+              "select": { "type": "string", "description": "Fields to return" },
+              "top": { "type": "string", "description": "Maximum number of results" },
+              "skip": { "type": "string", "description": "Number of results to skip" }
+            },
+            "required": []
+          },
+          "mock_response": {
+            "results": [
+              {
+                "id": "1",
+                "name": "Q4 2026 Sales Goals",
+                "displayText": "Quarterly Sales Goal Plan",
+                "numGoals": 3,
+                "userId": "alex.johnson@company.com",
+                "type": "performance"
+              }
+            ]
+          }
+        },
+        "create_goalplantemplate_for_sfodata": {
+          "description": "Create a new GoalPlanTemplate entity in SAP SuccessFactors.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string", "description": "Goal plan template name" },
+              "userId": { "type": "string", "description": "User ID" }
+            },
+            "required": ["name", "userId"]
+          },
+          "mock_response": {
+            "id": "2",
+            "name": "Q1 2027 Sales Goals",
+            "userId": "alex.johnson@company.com"
+          }
+        },
+        "update_goalplantemplate_for_sfodata": {
+          "description": "Update a GoalPlanTemplate entity in SAP SuccessFactors.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "string", "description": "Goal plan template ID" },
+              "name": { "type": "string", "description": "Updated name" }
+            },
+            "required": ["id"]
+          },
+          "mock_response": {
+            "id": "1",
+            "name": "Q4 2026 Sales Goals (Updated)"
+          }
+        },
+        "delete_goalplantemplate_for_sfodata": {
+          "description": "Delete a GoalPlanTemplate entity from SAP SuccessFactors.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "string", "description": "Goal plan template ID to delete" }
+            },
+            "required": ["id"]
+          },
+          "mock_response": {}
+        },
+        "get_goalplantemplate_for_sfodata": {
+          "description": "Retrieve a single GoalPlanTemplate entity by key.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "string", "description": "Goal plan template ID" }
+            },
+            "required": ["id"]
+          },
+          "mock_response": {
+            "id": "1",
+            "name": "Q4 2026 Sales Goals",
+            "displayText": "Quarterly Sales Goal Plan",
+            "numGoals": 3,
+            "userId": "alex.johnson@company.com"
+          }
+        },
+        "list_goalplanstate_for_sfodata": {
+          "description": "Retrieve a list of GoalPlanState entities.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "filter": { "type": "string" },
+              "top": { "type": "string" }
+            },
+            "required": []
+          },
+          "mock_response": {
+            "results": [
+              {
+                "id": "1",
+                "userId": "alex.johnson@company.com",
+                "planId": "1",
+                "state": "active"
+              }
+            ]
+          }
+        },
+        "create_goalplanstate_for_sfodata": {
+          "description": "Create a new GoalPlanState entity.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "userId": { "type": "string" },
+              "planId": { "type": "string" }
+            },
+            "required": ["userId", "planId"]
+          },
+          "mock_response": {
+            "id": "2",
+            "userId": "alex.johnson@company.com",
+            "planId": "1",
+            "state": "active"
+          }
+        },
+        "update_goalplanstate_for_sfodata": {
+          "description": "Update a GoalPlanState entity.",
+          "input_schema": {
+            "type": "object",
+            "properties": { "id": { "type": "string" } },
+            "required": ["id"]
+          },
+          "mock_response": { "id": "1", "state": "active" }
+        },
+        "delete_goalplanstate_for_sfodata": {
+          "description": "Delete a GoalPlanState entity.",
+          "input_schema": {
+            "type": "object",
+            "properties": { "id": { "type": "string" } },
+            "required": ["id"]
+          },
+          "mock_response": {}
+        },
+        "get_goalplanstate_for_sfodata": {
+          "description": "Retrieve a single GoalPlanState entity by key.",
+          "input_schema": {
+            "type": "object",
+            "properties": { "id": { "type": "string" } },
+            "required": ["id"]
+          },
+          "mock_response": {
+            "id": "1",
+            "userId": "alex.johnson@company.com",
+            "planId": "1",
+            "state": "active"
+          }
+        },
+        "list_goal_1_for_sfodata": {
+          "description": "Retrieve a list of Goal_1 entities (quarterly sales goals) from SAP SuccessFactors.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "filter": { "type": "string", "description": "OData filter, e.g. userId eq 'alex.johnson@company.com'" },
+              "select": { "type": "string" },
+              "top": { "type": "string" },
+              "skip": { "type": "string" }
+            },
+            "required": []
+          },
+          "mock_response": {
+            "results": [
+              {
+                "id": 1001,
+                "name": "Close 3 enterprise opportunities in Q4 2026",
+                "metric": "Pipeline",
+                "status": "On Track",
+                "userId": "alex.johnson@company.com",
+                "start": "/Date(1759276800000)/",
+                "due": "/Date(1767052800000)/",
+                "weight": 40
+              },
+              {
+                "id": 1002,
+                "name": "Conduct 15 discovery calls with new prospects in Q4 2026",
+                "metric": "Activity",
+                "status": "On Track",
+                "userId": "alex.johnson@company.com",
+                "start": "/Date(1759276800000)/",
+                "due": "/Date(1767052800000)/",
+                "weight": 30
+              }
+            ]
+          }
+        },
+        "create_goal_1_for_sfodata": {
+          "description": "Create a new Goal_1 entity in SAP SuccessFactors.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string", "description": "Goal title" },
+              "metric": { "type": "string", "description": "Goal metric/category" },
+              "userId": { "type": "string", "description": "User ID for the goal" },
+              "start": { "type": "string", "description": "Start date /Date(ms)/" },
+              "due": { "type": "string", "description": "Due date /Date(ms)/" },
+              "weight": { "type": "number", "description": "Goal weight percentage" }
+            },
+            "required": ["name", "userId"]
+          },
+          "mock_response": {
+            "id": 1003,
+            "name": "Complete enterprise product certification by end of Q4 2026",
+            "metric": "Growth",
+            "status": "On Track",
+            "userId": "alex.johnson@company.com",
+            "start": "/Date(1759276800000)/",
+            "due": "/Date(1767052800000)/",
+            "weight": 30
+          }
+        },
+        "update_goal_1_for_sfodata": {
+          "description": "Update a Goal_1 entity in SAP SuccessFactors.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "integer", "description": "Goal ID" },
+              "name": { "type": "string" },
+              "metric": { "type": "string" },
+              "status": { "type": "string" }
+            },
+            "required": ["id"]
+          },
+          "mock_response": {
+            "id": 1001,
+            "name": "Close 3 enterprise opportunities in Q4 2026 (Updated)",
+            "status": "On Track"
+          }
+        },
+        "delete_goal_1_for_sfodata": {
+          "description": "Delete a Goal_1 entity from SAP SuccessFactors.",
+          "input_schema": {
+            "type": "object",
+            "properties": { "id": { "type": "integer" } },
+            "required": ["id"]
+          },
+          "mock_response": {}
+        },
+        "get_goal_1_for_sfodata": {
+          "description": "Retrieve a single Goal_1 entity by key.",
+          "input_schema": {
+            "type": "object",
+            "properties": { "id": { "type": "integer" } },
+            "required": ["id"]
+          },
+          "mock_response": {
+            "id": 1001,
+            "name": "Close 3 enterprise opportunities in Q4 2026",
+            "metric": "Pipeline",
+            "status": "On Track",
+            "userId": "alex.johnson@company.com"
+          }
+        }
+      }
+    },
+    "sap-sf-ecemployeeprofile": {
+      "mcp_server_name": "sap.mcp/sfodata",
+      "description": "MCP server for SAP SuccessFactors Employee Profile operations.",
+      "tools": {
+        "list_eppublicprofile_for_sfodata": {
+          "description": "Retrieve a list of Employee Public Profile entities from SAP SuccessFactors.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "filter": { "type": "string", "description": "OData filter, e.g. userId eq 'alex.johnson@company.com'" },
+              "select": { "type": "string" },
+              "top": { "type": "string" },
+              "skip": { "type": "string" }
+            },
+            "required": []
+          },
+          "mock_response": {
+            "results": [
+              {
+                "userId": "alex.johnson@company.com",
+                "firstName": "Alex",
+                "lastName": "Johnson",
+                "title": "Senior Account Executive",
+                "department": "Enterprise Sales - EMEA",
+                "division": "Sales",
+                "location": "London",
+                "manager": "morgan.lee@company.com",
+                "hireDate": "/Date(1483228800000)/",
+                "jobCode": "AE-SR-001",
+                "email": "alex.johnson@company.com"
+              }
+            ]
+          }
+        },
+        "get_eppublicprofile_for_sfodata": {
+          "description": "Retrieve a single Employee Public Profile entity by key.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "userId": { "type": "string", "description": "User ID of the employee" }
+            },
+            "required": ["userId"]
+          },
+          "mock_response": {
+            "userId": "alex.johnson@company.com",
+            "firstName": "Alex",
+            "lastName": "Johnson",
+            "title": "Senior Account Executive",
+            "department": "Enterprise Sales - EMEA",
+            "division": "Sales",
+            "location": "London",
+            "manager": "morgan.lee@company.com",
+            "hireDate": "/Date(1483228800000)/",
+            "jobCode": "AE-SR-001",
+            "email": "alex.johnson@company.com"
+          }
+        },
+        "count_eppublicprofile_for_sfodata": {
+          "description": "Count Employee Public Profile entities.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "filter": { "type": "string" }
+            },
+            "required": []
+          },
+          "mock_response": {
+            "count": 1
+          }
+        },
+        "get_metadata_sfodata": {
+          "description": "Get metadata of the OData service.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "filter": { "type": "string" }
+            },
+            "required": []
+          },
+          "mock_response": {
+            "edmx": "<edmx:Edmx Version=\"1.0\"><edmx:DataServices><Schema Namespace=\"SFOData\"><EntityType Name=\"EPPublicProfile\"><Key><PropertyRef Name=\"userId\"/></Key><Property Name=\"userId\" Type=\"Edm.String\"/><Property Name=\"firstName\" Type=\"Edm.String\"/><Property Name=\"lastName\" Type=\"Edm.String\"/><Property Name=\"title\" Type=\"Edm.String\"/><Property Name=\"department\" Type=\"Edm.String\"/></EntityType></Schema></edmx:DataServices></edmx:Edmx>"
+          }
+        },
+        "batch_for_sfodata": {
+          "description": "Execute multiple OData operations in a single batch request.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "requests": { "type": "array" }
+            },
+            "required": ["requests"]
+          },
+          "mock_response": {
+            "responses": [{ "status": 200, "body": {} }]
+          }
+        }
+      }
+    }
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "created_for_agent": "sales-goal-setting-agent",
+    "mock_mode": true,
+    "deterministic": true,
+    "total_servers": 2,
+    "total_tools": 20,
+    "generated_from": [
+      "assets/sap-sf-performanceandgoalspmgm-mcp-server/mcp-translation/translation.json",
+      "assets/sap-sf-ecemployeeprofile-mcp-server/mcp-translation/translation.json"
+    ],
+    "generation_date": "2026-10-16"
+  }
+}
